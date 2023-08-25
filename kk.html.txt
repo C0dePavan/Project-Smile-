@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Learning Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: #3498db;
+        }
+        #emoji {
+            font-size: 2rem;
+        }
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Learn and Stay Happy! 😄</h1>
+        <p>Click the button to spread the joy:</p>
+        <p id="emoji">😄</p>
+        <button id="happyButton">Spread Happiness</button>
+    </div>
+
+    <script>
+        const emoji = document.getElementById("emoji");
+        const happyButton = document.getElementById("happyButton");
+
+        const emojis = ["😄", "😃", "😁", "🥳", "🎉", "🌟"];
+        let currentIndex = 0;
+
+        happyButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % emojis.length;
+            emoji.textContent = emojis[currentIndex];
+        });
+    </script>
+</body>
+</html>
